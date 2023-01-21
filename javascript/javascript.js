@@ -28,17 +28,19 @@ let resultadoRonda;
 function juegaUnaRonda(elHumanoEligio, laIAEligio) {
     laIAEligio = randomIA();
     if (laIAEligio === elHumanoEligio){
-         resultadoRonda = "empate"
+         resultadoRonda = "Fue un empate"
     } else if (elHumanoEligio === "piedra" && laIAEligio === "tijera" ||
         elHumanoEligio === "papel" && laIAEligio === "piedra" ||
         elHumanoEligio === "tijera" && laIAEligio === "papel") {
-            resultadoRonda = "ganaste"
+            resultadoRonda = `Ganaste! ${elHumanoEligio} le gana a ${laIAEligio}`
     } else {
-        resultadoRonda = "perdiste"
+        resultadoRonda = `Perdiste! ${laIAEligio} le gana a ${elHumanoEligio}`
 }
 return resultadoRonda;
 }    
+
+
     
     //Recalcular los puntajes
 
-console.log(juegaUnaRonda(elHumanoEligio, laIAEligio) + laIAEligio + elHumanoEligio)
+console.log(juegaUnaRonda(elHumanoEligio, laIAEligio))
