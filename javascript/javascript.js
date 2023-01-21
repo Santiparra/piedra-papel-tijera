@@ -29,15 +29,15 @@ let resultadoRonda;
     function juegaUnaRonda(elHumanoEligio, laIAEligio) {
         laIAEligio = randomIA();
         if (laIAEligio === elHumanoEligio){
-            resultadoRonda = "Fue un empate"
+            resultadoRonda = "Fue un empate!"
         } else if (elHumanoEligio === "piedra" && laIAEligio === "tijera" ||
             elHumanoEligio === "papel" && laIAEligio === "piedra" ||
             elHumanoEligio === "tijera" && laIAEligio === "papel") {
                 tuPuntaje = ++tuPuntaje;
-                resultadoRonda = `Ganaste! ${elHumanoEligio} le gana a ${laIAEligio}`
+                resultadoRonda = `Ganaste! ${elHumanoEligio} le gana a ${laIAEligio}!`
         } else {
             puntajeIA = ++puntajeIA;    
-            resultadoRonda = `Perdiste! ${laIAEligio} le gana a ${elHumanoEligio}`
+            resultadoRonda = `Perdiste! ${laIAEligio} le gana a ${elHumanoEligio}!`
     }
     return resultadoRonda + tuPuntaje + puntajeIA;
     }       
@@ -46,8 +46,18 @@ let resultadoRonda;
 function juego () {    
     for (; tuPuntaje <5 && puntajeIA <5;) {
         juegaUnaRonda(turnoHumano(), randomIA());
-        console.log(resultadoRonda + tuPuntaje + puntajeIA)
-    }
+        //Para que los logs salgan prolijos
+            if (tuPuntaje < puntajeIA){ 
+                console.log(resultadoRonda + " Vas perdiendo " + tuPuntaje + " a " + puntajeIA)
+            } else if (tuPuntaje > puntajeIA){
+                console.log(resultadoRonda + " Vas ganando " + tuPuntaje + " a " + puntajeIA)
+            }else {console.log(resultadoRonda + " Vas empatando " + tuPuntaje + " a " + puntajeIA)}    
+    } 
+                if (tuPuntaje === 5) {console.log(" Campeon! Ganaste: " + tuPuntaje + " a " + puntajeIA)}
+                else {console.log(" Lo siento, perdiste " + tuPuntaje + " a " + puntajeIA)}
+            
 }
+
+// Ejecutar Script
 
 juego()
