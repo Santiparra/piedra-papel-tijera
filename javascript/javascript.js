@@ -41,7 +41,7 @@ let resultadoRonda;
     }
     return resultadoRonda + tuPuntaje + puntajeIA;
     }       
-    //Recalcular los puntajes
+    //Funcion Global y loop para llevar tanteador
 
 function juego () {    
     for (; tuPuntaje <5 && puntajeIA <5;) {
@@ -53,6 +53,7 @@ function juego () {
                 console.log(resultadoRonda + " Vas ganando " + tuPuntaje + " a " + puntajeIA)
             }else {console.log(resultadoRonda + " Vas empatando " + tuPuntaje + " a " + puntajeIA)}    
     } 
+        //Resultados finales
                 if (tuPuntaje === 5) {console.log(" Campeon! Ganaste: " + tuPuntaje + " a " + puntajeIA)}
                 else {console.log(" Lo siento, perdiste " + tuPuntaje + " a " + puntajeIA)}
             
