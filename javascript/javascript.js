@@ -1,8 +1,10 @@
 //Llevar un puntaje (del 0 al 4), si alguno llega a 2 el juego se termina
 
 let laIAEligio;
+let elHumanoEligio;
 let tuPuntaje = (0);
 let puntajeIA = (0);
+let resultadoRonda;
 
     //Jugar una ronda individual
 
@@ -17,17 +19,15 @@ let puntajeIA = (0);
     }    
 
         //Eleccion del jugador Humano
-
-        function turnoHumano() {        
-        let cuadroDeEleccionHumano = prompt("Piedra, Papel o Tijera?");
-        let elHumanoEligio = cuadroDeEleccionHumano.toLowerCase();
-        return elHumanoEligio;
-}  
+//    function turnoHumano() {        
+//        let cuadroDeEleccionHumano = prompt("Piedra, Papel o Tijera?");
+//        let elHumanoEligio = cuadroDeEleccionHumano.toLowerCase();
+//        return elHumanoEligio;
+//}  
             //Funcion para comparar ambos valores y definir ganador de la ronda
-   
-let resultadoRonda;
     
-    function juegaUnaRonda(elHumanoEligio, laIAEligio) {
+function juegaUnaRonda() {
+        //elHumanoEligio = "piedra";
         laIAEligio = randomIA();
         if (laIAEligio === elHumanoEligio){
             resultadoRonda = "Fue un empate!"
@@ -40,13 +40,13 @@ let resultadoRonda;
             puntajeIA = ++puntajeIA;    
             resultadoRonda = `Perdiste! ${laIAEligio} le gana a ${elHumanoEligio}!`
     }
-    return resultadoRonda + tuPuntaje + puntajeIA;
-    }       
+    console.log(resultadoRonda + tuPuntaje + puntajeIA);
+}       
     //Funcion Global y loop para llevar tanteador
 
 function juego () {    
     for (; tuPuntaje <5 && puntajeIA <5;) {
-        juegaUnaRonda(turnoHumano(), randomIA());
+        juegaUnaRonda();
         //Para que los logs salgan prolijos
             if (tuPuntaje < puntajeIA){ 
                 console.log(resultadoRonda + " Vas perdiendo " + tuPuntaje + " a " + puntajeIA)
@@ -59,25 +59,12 @@ function juego () {
                 else {console.log(" Lo siento, perdiste " + tuPuntaje + " a " + puntajeIA)}
             
 }
-
 //Seccion UI
+const botones = document.querySelectorAll('.botonSeleccion');
 
-    //imput del Humano
-
-const botonpiedra = document.querySelector("#piedra");
-    botonpiedra.addEventListener('click', () => {
-    alert(piedra.id);
-  });
-const botonpapel = document.querySelector("#papel");
-  botonpapel.addEventListener('click', () => {
-  alert(papel.id);
-});
-
-const botontijera = document.querySelector("#tijera");
-    botontijera.addEventListener('click', () => {
-    alert(tijera.id);
-  });
- 
-// Ejecutar Script
-
+botones.forEach((button) => {button.addEventListener('click', () => {
+    elHumanoEligio = button.id;
+    juegaUnaRonda();
+})
+})
 //juego()
