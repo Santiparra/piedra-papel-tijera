@@ -5,6 +5,7 @@ let elHumanoEligio;
 let tuPuntaje = (0);
 let puntajeIA = (0);
 let resultadoRonda;
+let resultadoFinal;
 
     //Jugar una ronda individual
 
@@ -17,13 +18,7 @@ let resultadoRonda;
         } else {randomNumero = "tijera"}
         return randomNumero;
     }    
-
-        //Eleccion del jugador Humano
-//    function turnoHumano() {        
-//        let cuadroDeEleccionHumano = prompt("Piedra, Papel o Tijera?");
-//        let elHumanoEligio = cuadroDeEleccionHumano.toLowerCase();
-//        return elHumanoEligio;
-//}  
+ 
             //Funcion para comparar ambos valores y definir ganador de la ronda
     
 function juegaUnaRonda() {
@@ -57,8 +52,8 @@ function juego () {
         //Resultados finales
                 if (tuPuntaje === 5) {console.log(" Campeon! Ganaste: " + tuPuntaje + " a " + puntajeIA)}
                 else {console.log(" Lo siento, perdiste " + tuPuntaje + " a " + puntajeIA)}
-            
 }
+
 //Seccion UI
     
     //Botones de imput humano
@@ -67,7 +62,8 @@ const botones = document.querySelectorAll('.botonSeleccion');
 
 botones.forEach((button) => {button.addEventListener('click', () => {
     elHumanoEligio = button.id;
-    juegaUnaRonda();
+    if (tuPuntaje <5 && puntajeIA <5) {juegaUnaRonda();
+    } else {reinicio ()}
     marcadorHumano();
     marcadorIA();
     textorondas();
@@ -75,22 +71,16 @@ botones.forEach((button) => {button.addEventListener('click', () => {
 })
 
     //Display
-const marcador = document.querySelector("#score")
+const tuMarcador = document.querySelector("#tu-puntaje")
+const marcadorCompu = document.querySelector("#puntaje-IA")
+
         //Tanteador
-const tuTanteador = document.createElement('div');
-tuTanteador.classList.add("puntaje-humano");
-
-const tanteadorIA = document.createElement('div');
-tanteadorIA.classList.add("puntaje-IA");
-
 function marcadorHumano() { 
-    tuTanteador.textContent = tuPuntaje;
-    marcador.appendChild(tuTanteador)
+    tuMarcador.textContent = tuPuntaje;
 }
 
 function marcadorIA() { 
-    tanteadorIA.textContent = puntajeIA;
-    marcador.appendChild(tanteadorIA)
+    marcadorCompu.textContent = puntajeIA;
 }  
         //Ronda
 const dialogos = document.querySelector("#resultados")
@@ -101,5 +91,12 @@ function textorondas() {
     ronda.textContent = resultadoRonda;
     dialogos.appendChild(ronda)
 }
-//juego()
 
+const botondeReinicio = document.querySelector('.botonReinicio');
+
+botondeReinicio.addEventListener('click', () => {
+    tuPuntaje = 0;
+    puntajeIA = 0;
+    marcadorHumano();
+    marcadorIA();
+  });
