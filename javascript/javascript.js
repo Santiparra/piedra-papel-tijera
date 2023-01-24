@@ -17,7 +17,8 @@ let puntajeIA = (0);
     }    
 
         //Eleccion del jugador Humano
-    function turnoHumano() {        
+
+        function turnoHumano() {        
         let cuadroDeEleccionHumano = prompt("Piedra, Papel o Tijera?");
         let elHumanoEligio = cuadroDeEleccionHumano.toLowerCase();
         return elHumanoEligio;
@@ -59,6 +60,24 @@ function juego () {
             
 }
 
+//Seccion UI
+
+    //imput del Humano
+
+const botonpiedra = document.querySelector("#piedra");
+    botonpiedra.addEventListener('click', () => {
+    alert(piedra.id);
+  });
+const botonpapel = document.querySelector("#papel");
+  botonpapel.addEventListener('click', () => {
+  alert(papel.id);
+});
+
+const botontijera = document.querySelector("#tijera");
+    botontijera.addEventListener('click', () => {
+    alert(tijera.id);
+  });
+ 
 // Ejecutar Script
 
-juego()
+//juego()
