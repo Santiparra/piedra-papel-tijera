@@ -60,11 +60,46 @@ function juego () {
             
 }
 //Seccion UI
+    
+    //Botones de imput humano
+
 const botones = document.querySelectorAll('.botonSeleccion');
 
 botones.forEach((button) => {button.addEventListener('click', () => {
     elHumanoEligio = button.id;
     juegaUnaRonda();
+    marcadorHumano();
+    marcadorIA();
+    textorondas();
 })
 })
+
+    //Display
+const marcador = document.querySelector("#score")
+        //Tanteador
+const tuTanteador = document.createElement('div');
+tuTanteador.classList.add("puntaje-humano");
+
+const tanteadorIA = document.createElement('div');
+tanteadorIA.classList.add("puntaje-IA");
+
+function marcadorHumano() { 
+    tuTanteador.textContent = tuPuntaje;
+    marcador.appendChild(tuTanteador)
+}
+
+function marcadorIA() { 
+    tanteadorIA.textContent = puntajeIA;
+    marcador.appendChild(tanteadorIA)
+}  
+        //Ronda
+const dialogos = document.querySelector("#resultados")
+const ronda = document.createElement('div');
+ronda.classList.add("rondas");
+
+function textorondas() { 
+    ronda.textContent = resultadoRonda;
+    dialogos.appendChild(ronda)
+}
 //juego()
+
