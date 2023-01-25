@@ -1,0 +1,31 @@
+/*Paleta: #333333
+          #DCDCDC
+          #008080   
+          #2F4F4F
+          #778899
+
+*/
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#cabecera,
+#pie {
+    background-color: #333333;
+    color:#F0FFF0;
+    text-align: center;
+}    
+
+#score,
+#seleccionHumano,
+#utils {
+    background-color: #B0C4DE;
+}
+
+#resultados {
+    background-color: #3c5f90;
+    color: white;
+}
+
