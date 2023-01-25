@@ -22,7 +22,6 @@ let resultadoFinal;
             //Funcion para comparar ambos valores y definir ganador de la ronda
     
 function juegaUnaRonda() {
-        //elHumanoEligio = "piedra";
         laIAEligio = randomIA();
         if (laIAEligio === elHumanoEligio){
             resultadoRonda = "Fue un empate!"
@@ -37,23 +36,7 @@ function juegaUnaRonda() {
     }
     console.log(resultadoRonda + tuPuntaje + puntajeIA);
 }       
-    //Funcion Global y loop para llevar tanteador
-
-function juego () {    
-    for (; tuPuntaje <5 && puntajeIA <5;) {
-        juegaUnaRonda();
-        //Para que los logs salgan prolijos
-            if (tuPuntaje < puntajeIA){ 
-                console.log(resultadoRonda + " Vas perdiendo " + tuPuntaje + " a " + puntajeIA)
-            } else if (tuPuntaje > puntajeIA){
-                console.log(resultadoRonda + " Vas ganando " + tuPuntaje + " a " + puntajeIA)
-            }else {console.log(resultadoRonda + " Vas empatando " + tuPuntaje + " a " + puntajeIA)}    
-    } 
-        //Resultados finales
-                if (tuPuntaje === 5) {console.log(" Campeon! Ganaste: " + tuPuntaje + " a " + puntajeIA)}
-                else {console.log(" Lo siento, perdiste " + tuPuntaje + " a " + puntajeIA)}
-}
-
+        
 //Seccion UI
     
     //Botones de imput humano
@@ -84,19 +67,28 @@ function marcadorIA() {
 }  
         //Ronda
 const dialogos = document.querySelector("#resultados")
-//const ronda = document.createElement('div');
-//ronda.classList.add("rondas");
 
 function textorondas() { 
-    dialogos.textContent = resultadoRonda;
-//    dialogos.appendChild(ronda)
+    if (tuPuntaje === 5) {
+        dialogos.textContent = `Campeon! Ganaste: ${tuPuntaje} a ${puntajeIA}.`;
+        const ronda = document.createElement('div');
+        ronda.textContent = "Pulsa Reiniciar para seguir jugando!";
+        dialogos.appendChild(ronda);
+    } else if (puntajeIA === 5) {
+        dialogos.textContent = ` Lo siento, perdiste ${puntajeIA} a ${tuPuntaje}.`
+        const ronda = document.createElement('div');
+        ronda.textContent = "Pulsa Reiniciar para seguir jugando!";
+        dialogos.appendChild(ronda);    
+    } else {dialogos.textContent = resultadoRonda;}
 }
+
 
 const botondeReinicio = document.querySelector('.botonReinicio');
 
 botondeReinicio.addEventListener('click', () => {
     tuPuntaje = 0;
     puntajeIA = 0;
+    dialogos.textContent = "Aqui comienza tu aventura";
     marcadorHumano();
     marcadorIA();
-  });
+});

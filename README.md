@@ -2,12 +2,17 @@
 
 Proyecto en desarrollo.
 
-Objetivos: 
+Por hacer:
+-Añadir responsive.
 
-Crear un script para jugar piedra, papel o tijera contra una IA.
+Objetivos Generales: 
+
+Crear un script para jugar piedra, papel o tijera contra una IA randomizada.
 
 Se juega hasta que alguno llegue a 5 puntos, llevamos puntuación y se declara un ganador al final.
 
-Inicialmente el juego se desarrolla mediante consola y prompts.
+Imagenes:
 
-Una vez terminado utilizar los returns para generar una UI con botones y texto.
+Todas los svg son de dominio publico, obtenidas en:
+    https://freesvg.org/
+
