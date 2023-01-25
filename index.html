@@ -5,24 +5,34 @@
         <title>Piedra, papel o tijera</title>
         <script src="/javascript/javascript.js" defer></script>
         <link rel="stylesheet" href="/css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet'>
+
     </head>
     <body>
         <div id="cabecera">
             <h1>Piedra, papel o tijera</h1>
         </div>
         <div id="score">
-            <div id="tu-puntaje">0</div>
-            <div id="puntaje-IA">0</div>  
+            <div class="scorebox"><p>Tu:</p>
+                <div id="tu-puntaje">0</div>
+            </div>
+            <div class="scorebox"><p>Computadora:</p>
+                <div id="puntaje-IA">0</div>  
+            </div>    
         </div>
-        <div id="seleccionHumano">
-            <button class="botonSeleccion" id="piedra">Piedra</button>
-            <button class="botonSeleccion" id="papel">Papel</button>
-            <button class="botonSeleccion" id="tijera">Tijera</button>
+        <div id="container">
+            <div class="seleccionHumano" id="piedra">
+                <img src="/img/piedra.svg" alt="Una Piedra"></div>
+            <div class="seleccionHumano" id="papel">
+                <img src="/img/papel.svg" alt="Papeles"></div>
+            <div class="seleccionHumano" id="tijera">
+                <img src="/img/tijera.svg" alt="Unas tijeras"></div>
         </div>
         <div id="utils">
             <button class="botonReinicio">Reiniciar</button>
         </div>
-        <div id="resultados"></div>
+        <div id="resultados">Aqui comienza tu aventura</div>
             
         <div id="pie">           
             <p>SantiParra 2023</p>

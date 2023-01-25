@@ -58,7 +58,7 @@ function juego () {
     
     //Botones de imput humano
 
-const botones = document.querySelectorAll('.botonSeleccion');
+const botones = document.querySelectorAll('.seleccionHumano');
 
 botones.forEach((button) => {button.addEventListener('click', () => {
     elHumanoEligio = button.id;
@@ -84,12 +84,12 @@ function marcadorIA() {
 }  
         //Ronda
 const dialogos = document.querySelector("#resultados")
-const ronda = document.createElement('div');
-ronda.classList.add("rondas");
+//const ronda = document.createElement('div');
+//ronda.classList.add("rondas");
 
 function textorondas() { 
-    ronda.textContent = resultadoRonda;
-    dialogos.appendChild(ronda)
+    dialogos.textContent = resultadoRonda;
+//    dialogos.appendChild(ronda)
 }
 
 const botondeReinicio = document.querySelector('.botonReinicio');

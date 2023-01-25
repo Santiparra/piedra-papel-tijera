@@ -18,14 +18,90 @@ body {
     text-align: center;
 }    
 
-#score,
-#seleccionHumano,
+#container,
 #utils {
     background-color: #B0C4DE;
 }
 
-#resultados {
+#resultados,
+#score {
     background-color: #3c5f90;
     color: white;
 }
 
+#score {
+    font-family: 'Orbitron';font-size: 38px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 8px;
+    margin: 52px;
+}
+
+#resultados {
+    font-family: 'VT323';font-size: 22px;    
+}
+.scorebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#utils,
+#resultados {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 24px;
+}
+.seleccionHumano {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #333333;
+    border-radius: 18px;
+    margin: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+.seleccionHumano img {
+    width: 150px;
+}
+.seleccionHumano:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 1px;
+}
+
+.botonReinicio {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
+  
+.botonReinicio {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+  
+.botonReinicio {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
