@@ -82,7 +82,6 @@ function textorondas() {
     } else {dialogos.textContent = resultadoRonda;}
 }
 
-
 const botondeReinicio = document.querySelector('.botonReinicio');
 
 botondeReinicio.addEventListener('click', () => {
