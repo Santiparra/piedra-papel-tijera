@@ -14,7 +14,6 @@ body {
 }
 
 #cabecera,
-#pie,
 .secc-Reglas {
     background-color: #333333;
     color:#F0FFF0;
@@ -131,4 +130,24 @@ body {
   
 .botonReinicio {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+#pie {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: white;
+}
+
+#pie > p {
+    font-style:oblique;
+    color: white;
+}
+  
+#pie > a > img {
+    height: 30px;
+    width: 30px;
 }
